@@ -16,5 +16,15 @@ namespace MyApp_01
         {
             InitializeComponent();
         }
+
+        private void tmrReloj_Tick(object sender, EventArgs e)
+        {
+            lblReloj.Text = DateTime.Now.ToLongTimeString();
+            if (DateTime.Now.ToLongTimeString() == tiempo.ToLongTimeString())
+            {
+                axWindowsMediaPlayer1.URL = @"C:\Users\Jose Luis\Downloads\gallo.mp3";
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+            }
+        }
     }
 }
