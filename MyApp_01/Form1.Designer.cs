@@ -65,8 +65,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvInformacion);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(810, 587);
-            this.splitContainer1.SplitterDistance = 104;
+            this.splitContainer1.Size = new System.Drawing.Size(889, 504);
+            this.splitContainer1.SplitterDistance = 89;
             this.splitContainer1.TabIndex = 0;
             // 
             // btnAgregar
@@ -130,7 +130,7 @@
             this.dgvInformacion.ReadOnly = true;
             this.dgvInformacion.RowHeadersWidth = 62;
             this.dgvInformacion.RowTemplate.Height = 28;
-            this.dgvInformacion.Size = new System.Drawing.Size(810, 479);
+            this.dgvInformacion.Size = new System.Drawing.Size(889, 411);
             this.dgvInformacion.TabIndex = 1;
             this.dgvInformacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformacion_CellContentClick);
             // 
@@ -162,7 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 587);
+            this.ClientSize = new System.Drawing.Size(889, 504);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "Form1";
