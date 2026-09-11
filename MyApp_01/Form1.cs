@@ -12,6 +12,7 @@ namespace MyApp_01
 {
     public partial class Form1 : Form
     {
+        DateTime tiempo;
         public Form1()
         {
             InitializeComponent();
@@ -22,9 +23,45 @@ namespace MyApp_01
             lblReloj.Text = DateTime.Now.ToLongTimeString();
             if (DateTime.Now.ToLongTimeString() == tiempo.ToLongTimeString())
             {
-                axWindowsMediaPlayer1.URL = @"C:\Users\Jose Luis\Downloads\gallo.mp3";
+                axWindowsMediaPlayer1.URL = @"C:\Users\zvero\Music\Gallo.mp4";
                 axWindowsMediaPlayer1.Ctlcontrols.play();
             }
+        }
+
+        private void lblReloj_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void configurarAlarmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConfigurar ventanaAlarma = new frmConfigurar();
+
+            if (ventanaAlarma.ShowDialog() == DialogResult.OK)
+            {
+                tiempo = ventanaAlarma.hora;
+                MessageBox.Show(tiempo.ToLongTimeString());
+            }
+        }
+
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
