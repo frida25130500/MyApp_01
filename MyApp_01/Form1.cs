@@ -47,6 +47,12 @@ namespace MyApp_01
                 rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
                 guardarToolStripMenuItem.Enabled = false;
             }
+            //tarea
+            rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
+            guardarToolStripMenuItem.Enabled = false;
+
+            
+            tmr.Enabled = true;
         }
 
         private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,6 +78,21 @@ namespace MyApp_01
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tmr_Tick(object sender, EventArgs e)
+        {
+            //tarea
+            if (save == true)
+            {
+                rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
+                txt.Text = "Archivo guardado";
+            }
+        }
+
+        private void toolStripStatusLabel3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
