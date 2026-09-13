@@ -32,6 +32,7 @@
             this.sts = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txt = new System.Windows.Forms.ToolStripStatusLabel();
             this.rctTexto = new System.Windows.Forms.RichTextBox();
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,6 @@
             this.ofpAbrir = new System.Windows.Forms.OpenFileDialog();
             this.sfdGuardar = new System.Windows.Forms.SaveFileDialog();
             this.tmr = new System.Windows.Forms.Timer(this.components);
-            this.txt = new System.Windows.Forms.ToolStripStatusLabel();
             this.sts.SuspendLayout();
             this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -56,30 +56,36 @@
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.txt});
-            this.sts.Location = new System.Drawing.Point(0, 426);
+            this.sts.Location = new System.Drawing.Point(0, 428);
             this.sts.Name = "sts";
             this.sts.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
-            this.sts.Size = new System.Drawing.Size(800, 24);
+            this.sts.Size = new System.Drawing.Size(800, 22);
             this.sts.TabIndex = 5;
             this.sts.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 18);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 16);
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 18);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 16);
+            // 
+            // txt
+            // 
+            this.txt.Name = "txt";
+            this.txt.Size = new System.Drawing.Size(0, 16);
+            this.txt.Click += new System.EventHandler(this.toolStripStatusLabel3_Click);
             // 
             // rctTexto
             // 
             this.rctTexto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rctTexto.Location = new System.Drawing.Point(0, 30);
+            this.rctTexto.Location = new System.Drawing.Point(0, 28);
             this.rctTexto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rctTexto.Name = "rctTexto";
-            this.rctTexto.Size = new System.Drawing.Size(800, 420);
+            this.rctTexto.Size = new System.Drawing.Size(800, 422);
             this.rctTexto.TabIndex = 4;
             this.rctTexto.Text = "";
             this.rctTexto.TextChanged += new System.EventHandler(this.rctTexto_TextChanged);
@@ -92,7 +98,7 @@
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
             this.mnuPrincipal.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.mnuPrincipal.Size = new System.Drawing.Size(800, 30);
+            this.mnuPrincipal.Size = new System.Drawing.Size(800, 28);
             this.mnuPrincipal.TabIndex = 3;
             this.mnuPrincipal.Text = "menuStrip1";
             // 
@@ -106,46 +112,47 @@
             this.toolStripSeparator1,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
+            this.archivoToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
             // 
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // abrirToolStripMenuItem
             // 
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.abrirToolStripMenuItem.Text = "Abrir";
             this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.guardarToolStripMenuItem.Text = "Guardar";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // guardarComoToolStripMenuItem
             // 
             this.guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
-            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.guardarComoToolStripMenuItem.Text = "Guardar como";
             this.guardarComoToolStripMenuItem.Click += new System.EventHandler(this.guardarComoToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -162,12 +169,6 @@
             this.tmr.Enabled = true;
             this.tmr.Interval = 30000;
             this.tmr.Tick += new System.EventHandler(this.tmr_Tick);
-            // 
-            // txt
-            // 
-            this.txt.Name = "txt";
-            this.txt.Size = new System.Drawing.Size(0, 18);
-            this.txt.Click += new System.EventHandler(this.toolStripStatusLabel3_Click);
             // 
             // Form1
             // 

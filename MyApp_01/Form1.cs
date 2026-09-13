@@ -44,8 +44,7 @@ namespace MyApp_01
                     path = sfdGuardar.FileName;
                     save = true;
                 }
-                rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
-                guardarToolStripMenuItem.Enabled = false;
+                
             }
             //tarea
             rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
@@ -91,6 +90,11 @@ namespace MyApp_01
         }
 
         private void toolStripStatusLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
