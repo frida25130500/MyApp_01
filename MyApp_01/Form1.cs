@@ -50,8 +50,7 @@ namespace MyApp_01
             rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
             guardarToolStripMenuItem.Enabled = false;
 
-            
-            tmr.Enabled = true;
+    
         }
 
         private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
