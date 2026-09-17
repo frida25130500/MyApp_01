@@ -12,9 +12,13 @@ namespace MyApp_01
 {
     public partial class Form1 : Form
     {
+       List<Persona> personas = new List<Persona>();
         public Form1()
         {
             InitializeComponent();
+            personas.Add (new Persona (1,"Frida","8711850019"));
+            personas.Add(new Persona(2, "Isabella", "8715424433"));
+            personas.Add(new Persona(3, "Frida", "8744557142"));
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -30,6 +34,29 @@ namespace MyApp_01
         private void dgvInformacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            dgvInformacion.Rows.Add();
+            dgvInformacion[0, dgvInformacion.Rows.Count - 1].Value = dgvInformacion.Rows.Count;
+            dgvInformacion[1, dgvInformacion.Rows.Count-1].Value = txtNombre.Text;
+            dgvInformacion[2, dgvInformacion.Rows.Count-1].Value =mtbTelefono.Text;
+
+            //
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            foreach (var Persona in personas)
+            {
+                dgvInformacion.Rows.Add();
+                dgvInformacion[0, dgvInformacion.Rows.Count - 1].Value = Persona.Id;
+                dgvInformacion[1, dgvInformacion.Rows.Count - 1].Value = Persona.nombre;
+                dgvInformacion[2, dgvInformacion.Rows.Count - 1].Value = Persona.telefono;
+
+            }
+            dgvInformacion.DataSource = personas;
         }
     }
 }
