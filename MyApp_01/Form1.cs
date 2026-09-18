@@ -48,9 +48,9 @@ namespace MyApp_01
         {
             // Agregar datos en tiempo de ejecución aquí para evitar que el Diseñador intente ejecutar
             // código que manipula controles o datos durante el diseño.
-            personas.Add(new Persona(1, "Frida", "8711850019"));
-            personas.Add(new Persona(2, "Isabella", "8715424433"));
-            personas.Add(new Persona(3, "Frida", "8744557142"));
+            personas.Add(new Persona(1, "Frida Sofia", "8711850019"));
+            personas.Add(new Persona(2, "Isabella Flores", "8715424433"));
+            personas.Add(new Persona(3, "Miguel Angel", "8744557142"));
 
             foreach (var Persona in personas)
             {
