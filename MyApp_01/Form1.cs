@@ -22,6 +22,8 @@ namespace MyApp_01
         private void rctTexto_TextChanged(object sender, EventArgs e)
         {
             guardarToolStripMenuItem.Enabled = true;
+            //tarea
+            txt.Text = "";
         }
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
