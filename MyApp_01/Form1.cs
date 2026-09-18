@@ -16,9 +16,7 @@ namespace MyApp_01
         public Form1()
         {
             InitializeComponent();
-            personas.Add (new Persona (1,"Frida","8711850019"));
-            personas.Add(new Persona(2, "Isabella", "8715424433"));
-            personas.Add(new Persona(3, "Frida", "8744557142"));
+            
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -48,6 +46,12 @@ namespace MyApp_01
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Agregar datos en tiempo de ejecución aquí para evitar que el Diseñador intente ejecutar
+            // código que manipula controles o datos durante el diseño.
+            personas.Add(new Persona(1, "Frida", "8711850019"));
+            personas.Add(new Persona(2, "Isabella", "8715424433"));
+            personas.Add(new Persona(3, "Frida", "8744557142"));
+
             foreach (var Persona in personas)
             {
                 dgvInformacion.Rows.Add();
@@ -56,7 +60,7 @@ namespace MyApp_01
                 dgvInformacion[2, dgvInformacion.Rows.Count - 1].Value = Persona.telefono;
 
             }
-            dgvInformacion.DataSource = personas;
+            
         }
     }
 }

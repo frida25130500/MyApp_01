@@ -12,9 +12,9 @@ namespace MyApp_01
         public string nombre { get; set; }
         public string telefono { get; set; }
 
-        public Persona (int Id, string nombre, string telefono)
+        public Persona (int id, string nombre, string telefono)
         {
-        this.Id = Id;
+        this.Id = id;
         this.nombre = nombre;
         this.telefono = telefono;
         }
