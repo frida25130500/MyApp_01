@@ -167,7 +167,7 @@
             // tmr
             // 
             this.tmr.Enabled = true;
-            this.tmr.Interval = 5000;
+            this.tmr.Interval = 10000;
             this.tmr.Tick += new System.EventHandler(this.tmr_Tick);
             // 
             // Form1
@@ -179,7 +179,7 @@
             this.Controls.Add(this.rctTexto);
             this.Controls.Add(this.mnuPrincipal);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Mi Primer App (Block de notas)";
             this.sts.ResumeLayout(false);
             this.sts.PerformLayout();
             this.mnuPrincipal.ResumeLayout(false);
