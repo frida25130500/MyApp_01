@@ -91,7 +91,7 @@
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblReloj);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Mi Primer App Temporizador 1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
