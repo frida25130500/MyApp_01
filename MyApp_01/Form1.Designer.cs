@@ -126,7 +126,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCalcular);
             this.Name = "Form1";
-            this.Text = "Mi app (calculadora)";
+            this.Text = "Mi Primer App (Calculadora)";
             this.ResumeLayout(false);
             this.PerformLayout();
 
