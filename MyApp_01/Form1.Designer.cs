@@ -72,7 +72,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnProceso);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Mi Primer App Ejemplo 1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
