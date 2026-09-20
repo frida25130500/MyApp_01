@@ -80,7 +80,7 @@
             // configurarAlarmaToolStripMenuItem
             // 
             this.configurarAlarmaToolStripMenuItem.Name = "configurarAlarmaToolStripMenuItem";
-            this.configurarAlarmaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.configurarAlarmaToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.configurarAlarmaToolStripMenuItem.Text = "Configurar Alarma";
             this.configurarAlarmaToolStripMenuItem.Click += new System.EventHandler(this.configurarAlarmaToolStripMenuItem_Click);
             // 
@@ -92,7 +92,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -121,7 +121,7 @@
             this.Controls.Add(this.lblReloj);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Mi Primer App Temporizador 2";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
