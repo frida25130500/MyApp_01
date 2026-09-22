@@ -41,11 +41,18 @@ namespace MyApp_01
 
         private void dgvRegistros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Form editar = new Form2(
+            Form2 editar = new Form2(
                 dgvRegistros.Rows[e.RowIndex].Cells[1].Value.ToString(),
                 dgvRegistros.Rows[e.RowIndex].Cells[2].Value.ToString()
             );
-            editar.ShowDialog();
+            if (editar.ShowDialog() == DialogResult.OK)
+            {
+                string nombre = editar.ActualizaNombre;
+                string correo = editar.ActualizaCorreo;
+                dgvRegistros.Rows[e.RowsIndex].Cells[1].Value.ToString(),
+                dgvRegistros.Rows[e.RowIndex].Cells[2].Value.ToString() );
+            
+            }
         }
     }
 }
