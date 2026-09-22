@@ -32,14 +32,14 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnCargar = new System.Windows.Forms.Button();
             this.dgvRegistros = new System.Windows.Forms.DataGridView();
-            this.ofdCSV = new System.Windows.Forms.OpenFileDialog();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.C = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ofdCSV = new System.Windows.Forms.OpenFileDialog();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -94,11 +94,8 @@
             this.dgvRegistros.RowTemplate.Height = 24;
             this.dgvRegistros.Size = new System.Drawing.Size(994, 283);
             this.dgvRegistros.TabIndex = 0;
+            this.dgvRegistros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistros_CellContentClick);
             this.dgvRegistros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistros_CellContentClick);
-            // 
-            // ofdCSV
-            // 
-            this.ofdCSV.FileName = "openFileDialog1";
             // 
             // Column1
             // 
@@ -124,25 +121,6 @@
             this.Column3.ReadOnly = true;
             this.Column3.Width = 200;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.FillWeight = 5000F;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 125;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 125;
-            // 
             // C
             // 
             this.C.FillWeight = 5000F;
@@ -163,6 +141,29 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Width = 125;
+            // 
+            // ofdCSV
+            // 
+            this.ofdCSV.FileName = "openFileDialog1";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 5000F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 125;
             // 
             // Form1
             // 
