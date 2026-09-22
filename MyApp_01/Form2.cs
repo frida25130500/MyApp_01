@@ -10,17 +10,22 @@ using System.Windows.Forms;
 
 namespace MyApp_01
 {
-    public partial class Editar : Form
+    public partial class Form2 : Form
     {
-        public Editar()
+        public Form2(string nombre, string correo)
         {
             InitializeComponent();
-            txtNombre = nombre;
-            txtCorreo = correo;
+            txtNombre.Text = nombre;
+            txtCorreo.Text = correo;
 
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
 
         }

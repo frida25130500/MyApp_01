@@ -1,6 +1,6 @@
 ﻿namespace MyApp_01
 {
-    partial class Editar
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -86,8 +86,9 @@
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // Editar
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,7 +99,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Editar";
+            this.Name = "Form2";
             this.Text = "Editar";
             this.ResumeLayout(false);
             this.PerformLayout();
