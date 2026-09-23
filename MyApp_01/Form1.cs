@@ -49,9 +49,8 @@ namespace MyApp_01
             {
                 string nombre = editar.ActualizaNombre;
                 string correo = editar.ActualizaCorreo;
-                dgvRegistros.Rows[e.RowsIndex].Cells[1].Value.ToString(),
-                dgvRegistros.Rows[e.RowIndex].Cells[2].Value.ToString() );
-            
+                dgvRegistros.Rows[e.RowIndex].Cells[1].Value = nombre;
+                dgvRegistros.Rows[e.RowIndex].Cells[2].Value = correo;
             }
         }
     }
