@@ -31,6 +31,10 @@ namespace MyApp_01
                 var reader = new StreamReader(ofdCSV.FileName);
                 var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
                 registros = csv.GetRecords <Persona>().ToList();
+
+                //tarea
+                csv.Dispose();
+                reader.Close();
                 foreach (var registro in registros)
                 {
                     dgvRegistros.Rows.Add(registro.id, registro.name, registro.email);
@@ -51,6 +55,19 @@ namespace MyApp_01
                 string correo = editar.ActualizaCorreo;
                 dgvRegistros.Rows[e.RowIndex].Cells[1].Value = nombre;
                 dgvRegistros.Rows[e.RowIndex].Cells[2].Value = correo;
+                //tarea
+                registros[e.RowIndex].name = nombre;   
+                registros[e.RowIndex].email = correo;
+
+                //tarea
+                var writer = new StreamWriter(ofdCSV.FileName);
+                var csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
+
+                // tarea
+                csv.WriteRecords(registros);
+
+                csv.Dispose();
+                writer.Close();
             }
         }
     }
