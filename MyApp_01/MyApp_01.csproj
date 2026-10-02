@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Dockerfile" />
+    <None Include="docker-compose.yml" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
