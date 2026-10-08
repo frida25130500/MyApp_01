@@ -33,13 +33,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtPaterno = new System.Windows.Forms.TextBox();
+            this.txtMaterno = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -89,71 +89,73 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Correo";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(217, 22);
-            this.textBox1.TabIndex = 5;
+            this.txtNombre.Location = new System.Drawing.Point(150, 55);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(217, 22);
+            this.txtNombre.TabIndex = 5;
             // 
-            // textBox2
+            // txtPaterno
             // 
-            this.textBox2.Location = new System.Drawing.Point(150, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(217, 22);
-            this.textBox2.TabIndex = 6;
+            this.txtPaterno.Location = new System.Drawing.Point(150, 120);
+            this.txtPaterno.Name = "txtPaterno";
+            this.txtPaterno.Size = new System.Drawing.Size(217, 22);
+            this.txtPaterno.TabIndex = 6;
             // 
-            // textBox3
+            // txtMaterno
             // 
-            this.textBox3.Location = new System.Drawing.Point(150, 181);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(217, 22);
-            this.textBox3.TabIndex = 7;
+            this.txtMaterno.Location = new System.Drawing.Point(150, 181);
+            this.txtMaterno.Name = "txtMaterno";
+            this.txtMaterno.Size = new System.Drawing.Size(217, 22);
+            this.txtMaterno.TabIndex = 7;
             // 
-            // textBox4
+            // txtCorreo
             // 
-            this.textBox4.Location = new System.Drawing.Point(150, 240);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(217, 22);
-            this.textBox4.TabIndex = 8;
+            this.txtCorreo.Location = new System.Drawing.Point(150, 301);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(217, 22);
+            this.txtCorreo.TabIndex = 9;
             // 
-            // textBox5
+            // btnAgregar
             // 
-            this.textBox5.Location = new System.Drawing.Point(150, 301);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(217, 22);
-            this.textBox5.TabIndex = 9;
+            this.btnAgregar.Location = new System.Drawing.Point(51, 375);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(92, 43);
+            this.btnAgregar.TabIndex = 10;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
+            // btnEliminar
             // 
-            this.button1.Location = new System.Drawing.Point(51, 375);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 43);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEliminar.Location = new System.Drawing.Point(182, 375);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(90, 43);
+            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // txtTelefono
             // 
-            this.button2.Location = new System.Drawing.Point(182, 375);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 43);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.txtTelefono.Location = new System.Drawing.Point(150, 246);
+            this.txtTelefono.Mask = "(999)000-0000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(217, 22);
+            this.txtTelefono.TabIndex = 12;
             // 
             // Agregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.txtMaterno);
+            this.Controls.Add(this.txtPaterno);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -173,12 +175,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtPaterno;
+        private System.Windows.Forms.TextBox txtMaterno;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
     }
 }
