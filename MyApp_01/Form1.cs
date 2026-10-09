@@ -34,8 +34,13 @@ namespace MyApp_01
 
         private void agregarToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
-            Agregar agregar = new Agregar();
-            agregar.Show();
+            FRMInformacion ventana =new FRMInformacion();
+            ventana.Show();
+        }
+
+        private void agendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

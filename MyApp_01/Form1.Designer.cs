@@ -70,12 +70,13 @@
             this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
             this.agendaToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.agendaToolStripMenuItem.Text = "Agenda";
+            this.agendaToolStripMenuItem.Click += new System.EventHandler(this.agendaToolStripMenuItem_Click);
             // 
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
             this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.agregarToolStripMenuItem1.Text = "Agregar";
+            this.agregarToolStripMenuItem1.Text = "Informacion";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click_1);
             // 
             // Form1

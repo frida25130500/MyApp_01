@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Text;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace MyApp_01
         SqlConnection conexion;
         string cadenaConexion = "Server=localhost,1433;Integrated Security=false;" +
      "User=sa;password=L12345678.;initial catalog=Agenda";
-
+    
         private void conexionOpen()
         {
             try
@@ -24,7 +25,7 @@ namespace MyApp_01
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.ToString());
+                MessageBox.Show("Error de conexión: " + ex.Message);
             }
         }
         private void conexionClose()
@@ -49,9 +50,28 @@ namespace MyApp_01
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.ToString());
+                MessageBox.Show("Error al insertar: " + ex.Message);
                 return false;
             }
+        }
+        public DataSet Informacion(string comando)
+        {
+            DataSet ds= new DataSet();
+            try
+            {
+                conexionOpen();
+                SqlDataAdapter da = new SqlDataAdapter(comando, conexion);
+                da.Fill(ds);
+                conexion.Close();
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error:" + ex.ToString());
+                return null;
+            }
+
         }
     }
 }
