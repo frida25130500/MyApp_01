@@ -19,7 +19,7 @@ namespace MyApp_01
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
 
         private void Form1_Load(object sender, EventArgs e)
