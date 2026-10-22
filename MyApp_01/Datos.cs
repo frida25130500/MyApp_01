@@ -12,13 +12,14 @@ namespace MyApp_01
 {
     internal class Datos
     {
-        string cadenaConexion = "Server=localhost;Integrated Security=false;" +
+        string cadenaConexion = "Server=localhost,1433;Integrated Security=false;" +
             "User=sa;password=L12345678.;initial catalog=Agenda";
 
         public Datos() 
         {
             
         }
+
         private SqlConnection conexionOpen()
         {
             try
@@ -29,6 +30,7 @@ namespace MyApp_01
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);   // <- línea temporal
                 Console.WriteLine("Error: " + ex.ToString());
                 return null;
             }
@@ -67,6 +69,7 @@ namespace MyApp_01
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.ToString());
+                MessageBox.Show(ex.Message, "Error de base de datos");   // <-- aquí
                 return false;
             }
         }

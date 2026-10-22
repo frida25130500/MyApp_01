@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace MyApp_01
 {
@@ -61,12 +62,78 @@ namespace MyApp_01
 
         private void dgvInformacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            Agregar actualizar = new Agregar(dgvInformacion.Rows[e.RowIndex].Cells[1].Value.ToString(),
+                dgvInformacion.Rows[e.RowIndex].Cells[2].Value.ToString(),
+                dgvInformacion.Rows[e.RowIndex].Cells[3].Value.ToString(),
+                dgvInformacion.Rows[e.RowIndex].Cells[4].Value.ToString(),
+                dgvInformacion.Rows[e.RowIndex].Cells[5].Value.ToString(),
+                Convert.ToInt32(dgvInformacion.Rows[e.RowIndex].Cells[0].Value));
+            actualizar.Show();
         }
 
         private void FRMInformacion_Activated(object sender, EventArgs e)
         {
             ActualizarGrid();
+        }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow fila = dgvInformacion.CurrentRow;
+
+            Agregar actualizar = new Agregar(
+                fila.Cells[1].Value.ToString(),
+                fila.Cells[2].Value.ToString(),
+                fila.Cells[3].Value.ToString(),
+                fila.Cells[4].Value.ToString(),
+                fila.Cells[5].Value.ToString(),
+                Convert.ToInt32(fila.Cells[0].Value));
+            actualizar.Show();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow fila = dgvInformacion.CurrentRow;
+
+            DialogResult r = MessageBox.Show(
+                "¿Seguro que deseas eliminar este contacto?",
+                "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (r == DialogResult.Yes)
+            {
+                datos = new Datos();
+                SqlCommand comando = new SqlCommand("Delete From Datos Where Id=@Id");
+                comando.Parameters.AddWithValue("@Id", Convert.ToInt32(fila.Cells[0].Value));
+
+                if (datos.ejecutar(comando))
+                {
+                    MessageBox.Show("Registro eliminado correctamente");
+                    ActualizarGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar el registro");
+                }
+            }
+        }
+
+        private void dgvInformacion_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+            {
+                dgvInformacion.ClearSelection();
+                dgvInformacion.Rows[e.RowIndex].Selected = true;
+                dgvInformacion.CurrentCell = dgvInformacion.Rows[e.RowIndex].Cells[1];
+            }
+        }
+
+        private void dgvInformacion_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvInformacion_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
