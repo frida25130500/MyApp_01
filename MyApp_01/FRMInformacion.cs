@@ -93,26 +93,29 @@ namespace MyApp_01
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataGridViewRow fila = dgvInformacion.CurrentRow;
+            int id = Convert.ToInt32(fila.Cells[0].Value);
 
-            DialogResult r = MessageBox.Show(
-                "¿Seguro que deseas eliminar este contacto?",
+            DialogResult r = MessageBox.Show("¿Seguro que deseas eliminar el contacto con Id " + id + "?",
                 "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (r == DialogResult.Yes)
             {
                 datos = new Datos();
                 SqlCommand comando = new SqlCommand("Delete From Datos Where Id=@Id");
-                comando.Parameters.AddWithValue("@Id", Convert.ToInt32(fila.Cells[0].Value));
+                comando.Parameters.AddWithValue("@Id", id);
+                bool ok = datos.ejecutar(comando);
 
-                if (datos.ejecutar(comando))
-                {
-                    MessageBox.Show("Registro eliminado correctamente");
-                    ActualizarGrid();
-                }
+                // Pregunta a la base de datos si ese Id todavía existe
+                DataSet ds = datos.Informacion("Select * from Datos Where Id=" + id);
+
+                if (!ok)
+                    MessageBox.Show("El Delete falló (revisa el mensaje de error anterior)");
+                else if (ds != null && ds.Tables[0].Rows.Count == 0)
+                    MessageBox.Show("Contacto eliminado correctamente");
                 else
-                {
-                    MessageBox.Show("Error al eliminar el registro");
-                }
+                    MessageBox.Show("El Delete se ejecutó pero el Id " + id + " SIGUE en la base de datos");
+
+                ActualizarGrid();
             }
         }
 
