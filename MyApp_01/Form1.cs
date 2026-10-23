@@ -16,7 +16,8 @@ namespace MyApp_01
 {
     public partial class Form1 : Form
     {
-        List <Persona> registros = new List<Persona> ();
+        List<Estado> estados = new List<Estado>();
+        List<Municipio> municipios = new List<Municipio>();
 
         public Form1()
         {
@@ -27,48 +28,56 @@ namespace MyApp_01
         {
             if (ofdCSV.ShowDialog() == DialogResult.OK)
             {
-
                 var reader = new StreamReader(ofdCSV.FileName);
                 var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-                registros = csv.GetRecords <Persona>().ToList();
 
-                //tarea
-                csv.Dispose();
-                reader.Close();
-                foreach (var registro in registros)
+                // leer encabezado para saber si es estados o municipios
+                csv.Read();
+                csv.ReadHeader();
+                bool esMunicipios = csv.HeaderRecord.Contains("id_estado");
+
+                dgvRegistros.Rows.Clear();
+                dgvRegistros.Columns.Clear();
+                dgvRegistros.AllowUserToAddRows = false;
+
+                if (esMunicipios)
                 {
-                    dgvRegistros.Rows.Add(registro.id, registro.name, registro.email);
+                    municipios = csv.GetRecords<Municipio>().ToList();
+
+                    csv.Dispose();
+                    reader.Close();
+
+                    dgvRegistros.Columns.Add("id", "ID");
+                    dgvRegistros.Columns.Add("nombre", "Municipio");
+                    dgvRegistros.Columns.Add("id_estado", "ID Estado");
+
+                    foreach (var registro in municipios)
+                    {
+                        dgvRegistros.Rows.Add(registro.id, registro.nombre, registro.id_estado);
+                    }
+                }
+                else
+                {
+                    estados = csv.GetRecords<Estado>().ToList();
+
+                    csv.Dispose();
+                    reader.Close();
+
+                    dgvRegistros.Columns.Add("id", "ID");
+                    dgvRegistros.Columns.Add("nombre", "Estado");
+
+                    foreach (var registro in estados)
+                    {
+                        dgvRegistros.Rows.Add(registro.id, registro.nombre);
+                    }
                 }
 
+                dgvRegistros.AutoResizeColumns();
             }
         }
 
         private void dgvRegistros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Form2 editar = new Form2(
-                dgvRegistros.Rows[e.RowIndex].Cells[1].Value.ToString(),
-                dgvRegistros.Rows[e.RowIndex].Cells[2].Value.ToString()
-            );
-            if (editar.ShowDialog() == DialogResult.OK)
-            {
-                string nombre = editar.ActualizaNombre;
-                string correo = editar.ActualizaCorreo;
-                dgvRegistros.Rows[e.RowIndex].Cells[1].Value = nombre;
-                dgvRegistros.Rows[e.RowIndex].Cells[2].Value = correo;
-                //tarea
-                registros[e.RowIndex].name = nombre;   
-                registros[e.RowIndex].email = correo;
-
-                //tarea
-                var writer = new StreamWriter(ofdCSV.FileName);
-                var csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
-
-                // tarea
-                csv.WriteRecords(registros);
-
-                csv.Dispose();
-                writer.Close();
-            }
         }
     }
 }
